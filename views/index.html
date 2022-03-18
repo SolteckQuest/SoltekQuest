@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>SoltekQuest</title>
+    <script defer src="./index.js"></script>
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <!-- Imagen Logo -->
+            <div class="Logo logo nav-link">
+                <a href="#">
+                    <img src="./Images/Logo_Escala.png" alt="SoltekQuest">
+                </a>
+            </div>
+            <!-- -->
+            <button class="toggle nav-toggle">
+                <a href="#">
+                    <i class='bx bx-menu' ></i>
+                </a>
+            </button>
+            <ul class="nav-menu ">
+                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link nav-menu-link_active">Ayuda</a></li>
+                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link nav-menu-link_active">Contactanos</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <div class="container-form sign-up">
+        <div class="welcome-back">
+            <div class="message">
+                <h2>
+                    Bienvenido a SoltekQuest
+                </h2>
+            </div>
+
+        </div>
+        <form class="formulario" method="POST">
+            <h2 class="create-account">Crear Cuenta</h2>
+            <input type="text" name="userName" placeholder="Nombre(s)">
+            <input type="text" name="userApps" placeholder="Apellido(s)">
+            <input type="text" name="userEmail" placeholder="Correo Electrónico">
+            <input type="text" name="user" placeholder="Nombre de Usuario">
+            <input type="password" name="userPass" placeholder="Contraseña">
+            <input type="password" name="userPassConf" placeholder="Confirmar Contraseña">
+            <input type="button" value="Regresar" class="sign-in-btn">
+            <input type="submit" value="Registrarse" class="sign-up-summit-btn">
+            <div class="iconos">
+                <div class="border-icon">
+                    <i class='bx bxl-facebook-square' ></i>
+                </div>
+                <div class="border-icon">
+                    <i class='bx bxl-google' ></i>
+                </div>
+                <div class="border-icon">
+                    <i class='bx bxl-linkedin-square'></i>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container-form sign-in">
+        <div class="welcome-back">
+            <div class="message">
+                <h2>
+                    Bienvenido de nuevo a SoltekQuest
+                </h2>
+            </div>
+        </div>
+        <form class="formulario" action="/login" method="POST">
+            <h2 class="create-account">Iniciar Sesión</h2>
+            <input type="text" name="emailLg" placeholder="Correo Electrónico">
+            <input type="password" name="passLg" placeholder="Contraseña">
+            <input type="button" value="¿Olvidaste tu contraseña?" class="forgot-password-btn">
+            <input type="button" value="Registrarse" class="sign-up-btn">
+            <input type="submit" value="Iniciar Sesion" class="sign-in-summit-btn">
+            <div class="iconos">
+                <div class="border-icon">
+                    <i class='bx bxl-facebook-square' ></i>
+                </div>
+                <div class="border-icon">
+                    <i class='bx bxl-google' ></i>
+                </div>
+                <div class="border-icon">
+                    <i class='bx bxl-linkedin-square'></i>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container-form forgot-password">
+        <form class="formulario">
+            <h2 class="e-mail">¿Olvidaste tu contraseña?</h2>
+            <input type="text" placeholder="Correo Electrónico">
+            <input type="button" value="Regresar" class="sign-in-btn-2">
+            <input type="button" value="Enviar" class="send-btn">
+        </form>
+    </div>
+</body>
+
+</html>
