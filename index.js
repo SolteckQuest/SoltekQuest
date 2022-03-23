@@ -114,7 +114,7 @@ app.get('/login', (req, res) => {
 })
 
 //Habilitando el puerto del servidor
-app.listen('8000', () => { //Cambiar al puerto 8080 para correr en el servidor.
+app.listen('8080', () => { //Cambiar al puerto 8080 para correr en el servidor.
   console.log('App iniciada en el puerto 8000')
 })
 
