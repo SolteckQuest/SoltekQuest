@@ -267,7 +267,6 @@ body{
     background-color: white;
     font-weight: 3rem;
     font-size: .8rem;
-    cursor: pointer;
     color: blue;
     text-decoration: underline;
 }
@@ -375,7 +374,7 @@ body{
     margin: -70px 0 0 -400px;
     border-radius: 10px;
     padding: 1rem;
-    background-color: rgb(150, 150, 150);
+    background-color: #E5E5E5;
     text-align: center;
     align-items: center;
     
@@ -427,7 +426,6 @@ body{
     transition: all .5s ease-out;
     
 }
-
 .formulario-quest input{
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
     width: 800px;
@@ -440,7 +438,226 @@ body{
     font-size: larger;
     top: 0;
     position: relative;
+    transition: .3s;
 }
+
+.my-quest{
+    top: 20%;
+    width: 1000px;
+    height: 80px;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #E5E5E5;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+}
+
+.formulario-quest-reg-col{
+    width:700px;
+    height: 50px;
+    padding: 1rem;
+    margin: 1rem;
+    left: 50px;
+    font-size: larger;
+    display: flex;
+    position:absolute;
+    text-align: center;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.my-quest-option{
+    
+    top: 35%;
+    width: 1000px;
+    height: 500px;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #E5E5E5;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    display: flex;
+}
+
+.formulario-quest-stats{
+    font-size: larger;
+    display: flex;
+    position:absolute;
+    text-align: center;
+    align-items: center;
+    justify-content:space-between;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    border-radius: 10px;
+    width: 900px;
+    height: 80px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.my-quest-2{
+    top: 20%;
+    width: 1000px;
+    height: 80px;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #E5E5E5;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+}
+
+.formulario-quest-reg-col-2{
+    width:500px;
+    height: 50px;
+    padding: 1rem;
+    margin: 1rem;
+    left: 50px;
+    font-size: larger;
+    display: flex;
+    position:absolute;
+    text-align: center;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.my-quest-historial{
+    
+    top: 35%;
+    width: 1000px;
+    height: 500px;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #E5E5E5;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    display: flex;
+}
+
+.formulario-quest-historial{
+    font-size: larger;
+    display: flex;
+    position:absolute;
+    text-align: center;
+    align-items: center;
+    justify-content:space-between;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    border-radius: 10px;
+    width: 900px;
+    height: 80px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.visualize-btn{
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    border: white;
+    width: 150px;
+    height: 50px;
+    font-size: small;
+    background-color: #F59E2D;
+    align-items: center;
+    color: white;
+    position: relative;
+    border-radius: 15px;
+}
+.visualize-btn:hover{
+    background-color: orange;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-stats{
+    background-color: transparent;
+    border: white;
+    color: black;
+
+}
+
+.btn-stats:hover{
+    background-color: #F59E2D;
+    border-radius: 50%;
+    padding: .2rem;
+    margin: .2rem;
+    color: white;
+    transition: .3s;
+}
+
+/*Botones Cancelar, Agregar, Guardar*/
+
+.form-btn{
+    justify-content:space-between;
+}
+.agregar-btn{
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    border: white;
+    width: 150px;
+    height: 50px;
+    font-size: small;
+    background-color: #F59E2D;
+    align-items: center;
+    color: white;
+    position: relative;
+    top: 70%;
+    border-radius: 15px;
+}
+.agregar-btn:hover{
+    background-color: orange;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.cancelar-btn{
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    border: gray;
+    width: 150px;
+    height: 50px;
+    font-size: small;
+    background-color: transparent;
+    align-items: center;
+    position: relative;
+    top: 70%;
+    border-radius: 15px;
+    transition: .6s;
+    
+}
+.cancelar-btn:hover{
+    background-color: #E5E5E5;
+    cursor: pointer;
+    transition: .6s;
+}
+
+.save-btn{
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    border: white;
+    width: 150px;
+    height: 50px;
+    font-size: small;
+    background-color: #F59E2D;
+    align-items: center;
+    color: white;
+    position: relative;
+    top: 70%;
+    border-radius: 15px;
+}
+.save-btn:hover{
+    background-color: orange;
+    cursor: pointer;
+    transition: .3s;transition: .3s;
+}
+/**/
+/*
+
+*/
+
 
 .dropdown-menu-option{
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
@@ -466,6 +683,8 @@ body{
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
 }
 
+
+
 .create-quest{
     position: absolute;
     opacity: 0;
@@ -475,6 +694,47 @@ body{
     opacity: 1;
     visibility: visible; 
 }
+
+.my-quest{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden; 
+}
+.my-quest.active{
+    opacity: 1;
+    visibility: visible; 
+}
+
+.my-quest-option{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden; 
+}
+.my-quest-option.active{
+    opacity: 1;
+    visibility: visible; 
+}
+
+.my-quest-2{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden; 
+}
+.my-quest-2.active{
+    opacity: 1;
+    visibility: visible; 
+}
+
+.my-quest-historial{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden; 
+}
+.my-quest-historial.active{
+    opacity: 1;
+    visibility: visible; 
+}
+
 .option.active{
     opacity: 0;
     visibility: hidden;
@@ -609,7 +869,7 @@ body{
 }
 
 
-/*Fi de pregutas*/
+/*Fin de preguntas*/
 .formulario-quest-ab-op{
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
     width: 800px;
@@ -777,6 +1037,16 @@ body{
     visibility: hidden; 
 }
 .range.active{
+    opacity: 1;
+    visibility: visible; 
+}
+
+.checkbox{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden; 
+}
+.checkbox.active{
     opacity: 1;
     visibility: visible; 
 }

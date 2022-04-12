@@ -11,11 +11,12 @@
     <link rel="stylesheet" href="style.css">
     <title>SoltekQuest</title>
     <script defer src="sesion.js"></script>
+    <script defer src="./main.js"></script>
     <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body id="sesion-on">
     <header class="header">
         <nav class="nav">
             <div class="Logo logo nav-link">
@@ -44,7 +45,7 @@
             </ul>
         </nav>
     </header>
-    <div class="container-sesion option">
+    <div class="container-sesion option" >
         <form class="formulario-user">
             <a href="#">
                 <img class="user-image" src="Images/usuario_escala.png" alt="userscale">
@@ -74,6 +75,8 @@
                 <option value="verificacion" class="dropdown-menu">Verificación</option>
             </select>
             
+            
+            <!--<input type="button" value="Agregar pregunta" class="agregar-btn"><i class='bx bx-add-to-queue'></i>-->
         </form>
         <!--Opcion Multiple-->
         <div class="container-sesion option-multiple">
@@ -123,7 +126,50 @@
                 <input type="checkbox" value="1">&nbsp;<input type="text" placeholder="Respuesta 1">
             </form>
         </div>
+        <div class="container-sesion btn">
+            <form class="form-btn">
+                <button id="btnadd" class="agregar-btn"><i class='bx bx-add-to-queue'></i>  Agregar pregunta</button>
+                <button id="btncancel" class="cancelar-btn">Cancelar</button>
+                <button id="btnsave" class="save-btn">Guardar<i class='bx bx-save' ></i></button>
+            </form>
+        </div>
     </div>
+
+    <div class="container-sesion my-quest">
+        <form class="formulario-quest-reg-col">
+            <div>Titulo</div>
+            <div>Fecha</div>
+            <div>Respuestas</div>
+            <div>Estadisticas</div>
+        </form>
+    </div>
+    <div class="container-sesion my-quest-option">
+        <form class="formulario-quest-stats">
+            <form class="centeritems">
+                <div>Nombre de encuesta</div>
+                <div id="current_date"></div>
+                <div><i class='bx bx-user'></i>0</div>
+                <button class="btn-stats"><i class='bx bxs-bar-chart-alt-2'></i></button>
+                <button id="btnvisualize" class="visualize-btn">Visualizar</button>
+            </form> 
+        </form>
+    </div>
+    <div class="container-sesion my-quest-2">
+        <form class="formulario-quest-reg-col-2">
+            <div>Titulo</div>
+            <div>Fecha de respuesta</div>
+        </form>
+    </div>
+    <div class="container-sesion my-quest-historial">
+        <form class="formulario-quest-historial">
+            <form class="centeritems">
+                <div>Nombre de encuesta</div>
+                <div id="current_date-2"></div>
+                <button id="btnvisualize" class="visualize-btn">Visualizar</button>
+            </form> 
+        </form>
+    </div>
+
     
 
     

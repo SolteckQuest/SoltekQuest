@@ -27,3 +27,5 @@ document.addEventListener("click", e =>{
         forgotPass.classList.toggle("active");
     }
 });
+
+

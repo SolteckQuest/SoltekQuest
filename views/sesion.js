@@ -2,7 +2,13 @@ const navToggle = document.querySelector(".nav-toggle");
 const navMenu = document.querySelector(".nav-menu");
 const btnQuest = document.querySelector(".quest-btn"),
     CreateQuest = document.querySelector(".create-quest"),
-    Option1 = document.querySelector(".option");
+    Option1 = document.querySelector(".option"),
+    MyQuest = document.querySelector(".my-quest"),
+    btnMyQuest = document.querySelector(".my-quest-btn"),
+    MyQuestOption = document.querySelector(".my-quest-option"),
+    MyQuest2 = document.querySelector(".my-quest-2"),
+    MyQuestHistorial = document.querySelector(".my-quest-historial"),
+    btnMyQuestHistorial = document.querySelector(".historial-btn");
 
 navToggle.addEventListener("click", () =>{
     navMenu.classList.toggle("nav-menu-visible");
@@ -12,6 +18,16 @@ document.addEventListener("click", e =>{
     if(e.target === btnQuest /*|| e.target === btnSignUp*/){
         CreateQuest.classList.toggle("active");
         Option1.classList.toggle("active");
+    }
+    if(e.target === btnMyQuest /*|| e.target === btnSignUp*/){
+        MyQuest.classList.toggle("active");
+        Option1.classList.toggle("active");
+        MyQuestOption.classList.toggle("active");
+    }
+    if(e.target === btnMyQuestHistorial /*|| e.target === btnSignUp*/){
+        MyQuest2.classList.toggle("active");
+        Option1.classList.toggle("active");
+        MyQuestHistorial.classList.toggle("active");
     }
 });
 
@@ -23,7 +39,10 @@ const WithOutAns = document.querySelector(".without-ans"),
     AbiertaOp = document.querySelector(".abierta-op"),
     RangeA = document.querySelector(".range"),
     CheckBox = document.querySelector(".checkbox");
-
+/*Botones*/
+const BtnSave = document.getElementById("btnsave").disabled=true,
+    BtnAdd = document.getElementById("btnadd").disabled=true,
+    BtnCancel = document.getElementById("btncancel").disabled=true;
 function selectelement(){
     let dropdownnans = document.getElementById("typeanswers");
     let answer = dropdownnans.value;
@@ -58,3 +77,11 @@ if (elInput) {
     }, false);
   }
 }
+
+//fecha
+date = new Date();
+year = date.getFullYear();
+month = date.getMonth() + 1;
+day = date.getDate();
+document.getElementById("current_date").innerHTML = day + "/" + month + "/" + year;
+document.getElementById("current_date-2").innerHTML = day + "/" + month + "/" + year;
