@@ -30,53 +30,27 @@ document.addEventListener("click", e =>{
         MyQuestHistorial.classList.toggle("active");
     }
 });
+//Range input
+const rangeInputs = document.querySelectorAll('input[type="range"]')
+const numberInput = document.querySelector('input[type="number"]')
 
-/*dropdown options*/
-const WithOutAns = document.querySelector(".without-ans"),
-    OptionMultiple = document.querySelector(".option-multiple"),
-    Abierta = document.querySelector(".abierta"),
-    Personal = document.querySelector(".personal"),
-    AbiertaOp = document.querySelector(".abierta-op"),
-    RangeA = document.querySelector(".range"),
-    CheckBox = document.querySelector(".checkbox");
-/*Botones*/
-const BtnSave = document.getElementById("btnsave").disabled=true,
-    BtnAdd = document.getElementById("btnadd").disabled=true,
-    BtnCancel = document.getElementById("btncancel").disabled=true;
-function selectelement(){
-    let dropdownnans = document.getElementById("typeanswers");
-    let answer = dropdownnans.value;
-    if(answer == "abierta" ){
-       Abierta.classList.toggle("active");
-    }
-    if(answer == "multiple"){
-        OptionMultiple.classList.toggle("active");
-    }
-    if(answer == "datosp"){
-        Personal.classList.toggle("active");
-    }
-    if(answer == "multiplea"){
-        AbiertaOp.classList.toggle("active");
-    }
-    if(answer == "calificacion"){
-        RangeA.classList.toggle("active");
-    }
-    if(answer == "verificacion"){
-        CheckBox.classList.toggle("active");
-    }
+function handleInputChange(e) {
+  let target = e.target
+  if (e.target.type !== 'range') {
+    target = document.getElementById('range')
+  } 
+  const min = target.min
+  const max = target.max
+  const val = target.value
+  
+  target.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%'
 }
 
-var elInput = document.querySelector('#rangeid');
-if (elInput) {
-  var etiqueta = document.querySelector('#valorid');
-  if (etiqueta) {
-    etiqueta.innerHTML = elInput.value;
+rangeInputs.forEach(input => {
+  input.addEventListener('input', handleInputChange)
+})
 
-    elInput.addEventListener('input', function() {
-      etiqueta.innerHTML = elInput.value;
-    }, false);
-  }
-}
+numberInput.addEventListener('input', handleInputChange)
 
 //fecha
 date = new Date();

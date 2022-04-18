@@ -38,75 +38,14 @@
                         class="nav-menu-link nav-link nav-menu-link_active">Contactanos</a></li>
             </ul>
         </nav>
-
     </header>
-
-    <div class="container-form sign-up">
-        <div class="welcome-back">
-            <div class="message">
-                <h2>
-                    Bienvenido a SoltekQuest
-                </h2>
-            </div>
-
-        </div>
-        <form class="formulario" method="POST" id="register-form">
-            <h2 class="create-account">Crear Cuenta</h2>
-            <input id="name" type="text" name="userName" placeholder="Nombre(s)">
-            <input id="lastname" type="text" name="userApps" placeholder="Apellido(s)">
-            <input id="email_in" type="email" name="userEmail" placeholder="Correo Electrónico">
-            <input id="nameuser" type="text" name="user" placeholder="Nombre de Usuario">
-            <input id="password_in" type="password" name="userPass" placeholder="Contraseña">
-            <input id="passwordconfirm" type="password" name="userPassConf" placeholder="Confirmar Contraseña">
-            <input type="button" value="Regresar" class="sign-in-btn">
-            <input onclick="renderResgister()" type="submit" value="Registrarse" class="sign-up-summit-btn">
-            <div class="iconos">
-                <div class="border-icon">
-                    <i class='bx bxl-facebook-square'></i>
-                </div>
-                <div class="border-icon">
-                    <i class='bx bxl-google'></i>
-                </div>
-                <div class="border-icon">
-                    <i class='bx bxl-linkedin-square'></i>
-                </div>
-            </div>
-        </form>
-    </div>
     <div class="container-form sign-in">
-        <div class="welcome-back">
-            <div class="message">
-                <h2>
-                    Bienvenido de nuevo a SoltekQuest
-                </h2>
-            </div>
-        </div>
         <form class="formulario" action="/login" method="POST" id="login-form">
-            <h2 class="create-account">Iniciar Sesión</h2>
-            <input type="text" id="email" name="email" placeholder="Correo Electrónico">
-            <input type="password" id='password' name="password" placeholder="Contraseña">
-            <input type="button" value="¿Olvidaste tu contraseña?" class="forgot-password-btn">
-            <input type="button" value="Registrarse" class="sign-up-btn">
-            <input type="submit" value="Iniciar Sesion" class="sign-in-summit-btn">
-            <div class="iconos">
-                <div class="border-icon">
-                    <i class='bx bxl-facebook-square'></i>
-                </div>
-                <div class="border-icon">
-                    <i class='bx bxl-google'></i>
-                </div>
-                <div class="border-icon">
-                    <i class='bx bxl-linkedin-square'></i>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="container-form forgot-password">
-        <form class="formulario">
-            <h2 class="e-mail">¿Olvidaste tu contraseña?</h2>
-            <input type="text" placeholder="Correo Electrónico">
-            <input type="button" value="Regresar" class="sign-in-btn-2">
-            <input type="button" value="Enviar" class="send-btn">
+            <h2 class="create-account">¿Tienes token?</h2>
+            <input type="text" id="token" name="token" placeholder="Token">
+            <input type="submit" value="Visualizar" class="vi-summit-btn">
+            <h3 class="h3">Para tener token hay que crear un pregunta</h3>
+            <input type="submit" value="Crear pregunta" class="ask-summit-btn">
         </form>
     </div>
 </body>

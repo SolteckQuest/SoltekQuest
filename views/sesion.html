@@ -34,116 +34,30 @@
                             class='bx bx-help-circle'></i></a></li>
                 <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link nav-menu-link_active">Contactanos<i
                             class='bx bx-phone'></i></a></li>
-                <li class="dropdown">
-                    <button class="user">Usuario<i class='bx bx-user'></i></button>
-                    <div class="dropdown-content">
-                        <a href="#" class="nav-menu-link nav-link nav-menu-link_active">Mi cuenta</a>
-                        <a href="#" class="nav-menu-link nav-link nav-menu-link_active">Mis encuestas</a>
-                        <a href="index.html" class="nav-menu-link nav-link nav-menu-link_active">Cerrar sesión</a>
-                    </div>
-                </li>
             </ul>
         </nav>
     </header>
-    <div class="container-sesion option" >
-        <form class="formulario-user">
-            <a href="#">
-                <img class="user-image" src="Images/usuario_escala.png" alt="userscale">
-            </a>
-            <h2>Nombre de Usuario</h2>
-        </form>
-
-        <form class="formulario-opcion">
-            <input type="button" value="Crear Encuesta" class="quest-btn">
-            <input type="button" value="Mis Encuestas" class="my-quest-btn">
-            <input type="button" value="Historial" class="historial-btn">
-
-        </form>
-    </div>
-
     <div class="container-sesion create-quest">
         <form class="formulario-quest">
-            <h2>Pregunta 1</h2>
-            <input type="text" name="" id="">
-            <select name="" id="typeanswers" class="dropdown-menu-option" onchange="selectelement();">
-                <option value="respuesta" class="dropdown-menu">Seleccione tipo de respuesta</option>
-                <option value="multiple" class="dropdown-menu">Opción múltiple</option>
-                <option value="abierta" class="dropdown-menu">Abierta</option>
-                <option value="datosp" class="dropdown-menu">Datos personales</option>
-                <option value="multiplea" class="dropdown-menu">Múltiple abierta</option>
-                <option value="calificacion" class="dropdown-menu">Calificación</option>
-                <option value="verificacion" class="dropdown-menu">Verificación</option>
-            </select>
-            
-            
-            <!--<input type="button" value="Agregar pregunta" class="agregar-btn"><i class='bx bx-add-to-queue'></i>-->
-        </form>
-        <!--Opcion Multiple-->
-        <div class="container-sesion option-multiple">
-            <form class="formulario-quest-res">
-                <input type="radio" value="1">&nbsp;<input type="text" placeholder="Respuesta 1">
-            </form>
-        </div>
-        <!--Abierta-->
-        <div class="container-sesion abierta">
-            <form class="formulario-quest-ab">
-                <input type="text" placeholder="Respuesta">
-            </form>
-        </div>
-        <!--Datos Personales-->
-        <div class="container-sesion personal">
-            <form class="formulario-quest-pe">
-                <input type="text" placeholder="Nombre">
-                <input type="text" placeholder="Empresa o Unidad Academica">
-                <h3>Direccion Personal</h3>
-                <input type="text" placeholder="Colonia">
-                <input type="text" placeholder="Calle">
-                <input type="text" placeholder="Numero Exterior">
-                <input type="text" placeholder="Numero Interior">
-                <input type="text" placeholder="Codigo Postal">
-                <input type="text" placeholder="Estado">
-                <input type="text" placeholder="Ciudad">
-                <input type="text" placeholder="Direccion de Correo Electronico">
-                <input type="text" placeholder="Numero de Telefono">
-            </form>
-        </div>
-        <!--Multiple Abierta-->
-        <div class="container-sesion abierta-op">
-            <form class="formulario-quest-ab-op">
-                <input name="pregunta" type="text" placeholder="Pregunta"><input name="respuesta" type="text" placeholder="Respuesta">
-            </form>
-        </div>
-        <!--Calificacion-->
-        <div class="container-sesion range">
-            <form class="formulario-quest-range">
-                <div id="valorid"></div>
-                <input id="rangeid" type="range" value="50" min="0" max="100" autocomplete="off">
-            </form>
-        </div>
-        <!--Verificacion-->
-        <div class="container-sesion checkbox">
-            <form class="formulario-quest-cb">
-                <input type="checkbox" value="1">&nbsp;<input type="text" placeholder="Respuesta 1">
-            </form>
-        </div>
-        <div class="container-sesion btn">
-            <form class="form-btn">
-                <button id="btnadd" class="agregar-btn"><i class='bx bx-add-to-queue'></i>  Agregar pregunta</button>
-                <button id="btncancel" class="cancelar-btn">Cancelar</button>
-                <button id="btnsave" class="save-btn">Guardar<i class='bx bx-save' ></i></button>
-            </form>
-        </div>
+            <h2>Formula tu pregunta</h2>
+            <div class="container-sesion range">
+                <form class="formulario-quest-range">
+                    <input type="text" id="id_pregunta" class="pregunta" placeholder="Pregunta">
+                    <br>
+                    <input type="range" value="5" min="0" max="10" oninput="rangevalue.value=value" />
+                    <output id="rangevalue">5</output>
+                </form>
+            </div>
     </div>
-
-    <div class="container-sesion my-quest">
-        <form class="formulario-quest-reg-col">
-            <div>Titulo</div>
-            <div>Fecha</div>
-            <div>Respuestas</div>
-            <div>Estadisticas</div>
+    <div class="container-sesion btn">
+        <form class="form-btn">
+          <!-- <button id="btnadd" class="agregar-btn"><i class='bx bx-add-to-queue'></i> Agregar pregunta</button>--> 
+            <button id="btncancel" class="cancelar-btn">Cancelar</button>
+            <button id="btnsave" class="save-btn">Guardar<i class='bx bx-save'></i></button>
         </form>
     </div>
-    <div class="container-sesion my-quest-option">
+    <!--
+        <div class="container-sesion my-quest-option">
         <form class="formulario-quest-stats">
             <form class="centeritems">
                 <div>Nombre de encuesta</div>
@@ -151,27 +65,8 @@
                 <div><i class='bx bx-user'></i>0</div>
                 <button class="btn-stats"><i class='bx bxs-bar-chart-alt-2'></i></button>
                 <button id="btnvisualize" class="visualize-btn">Visualizar</button>
-            </form> 
+            </form>
         </form>
     </div>
-    <div class="container-sesion my-quest-2">
-        <form class="formulario-quest-reg-col-2">
-            <div>Titulo</div>
-            <div>Fecha de respuesta</div>
-        </form>
-    </div>
-    <div class="container-sesion my-quest-historial">
-        <form class="formulario-quest-historial">
-            <form class="centeritems">
-                <div>Nombre de encuesta</div>
-                <div id="current_date-2"></div>
-                <button id="btnvisualize" class="visualize-btn">Visualizar</button>
-            </form> 
-        </form>
-    </div>
-
-    
-
-    
-
+    -->
 </body>

@@ -24,38 +24,41 @@ let user = {}
 
 const renderApp = () => {
     const token = localStorage.getItem('token')
-    if (token){
-        user = JSON.parse(localStorage.getItem('user'))
-        window.location.replace('sesion.html')
+    user = JSON.parse(localStorage.getItem('user'))
+    if(token){
+        //renderSesion()
     }
-    else{
-        renderLogin()
-    }
+    renderLogin()
+    renderRegister()
 }
 
 const renderSesion = () => {
-    
-    //window.location.href = 'youtube.com'
+    window.location.replace('sesion.html')
 }
 
-const renderLogin = () =>{
-    const loginForm = document.getElementById('login-form');
+const renderLogin = () => {
+    const loginForm = document.getElementById('login-form')
     loginForm.onsubmit = (e) => {
         e.preventDefault()
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+        const email = document.getElementById('email').value
+        const password = document.getElementById('password').value
         fetch('https://36oqqx1tq4.execute-api.us-west-1.amazonaws.com/api/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({email, password}) 
-        })/*.then(x => x.json())
+        }).then(x => x.json())
             .then(respuesta =>{
                 localStorage.setItem('token', respuesta.token)
-                ruta = 'sesion';
-                return respuesta.token;
+                ruta = 'sesion'
             })
+            const token = localStorage.getItem('token')
+            if (email && password){
+                renderSesion()
+                console.log(token)
+            }
+            /*
             .then(token =>{
                 fetch('https://36oqqx1tq4.execute-api.us-west-1.amazonaws.com/api/auth/login',{
                     method: 'GET',
@@ -71,6 +74,25 @@ const renderLogin = () =>{
                 user = fetchedUser;
                 renderSesion();
             })*/
+    }
+}
+
+const renderRegister = () =>{
+    const loginForm = document.getElementById('register-form')
+    loginForm.onsubmit = (e) => {
+        e.preventDefault()
+        const email = document.getElementById('email_in').value
+        const password = document.getElementById('password_in').value
+        const name = document.getElementById('name').value
+        const lastname = document.getElementById('lastname').value
+        const nameuser = document.getElementById('nameuser').value
+        fetch('https://36oqqx1tq4.execute-api.us-west-1.amazonaws.com/api/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({'nombre':name, 'apellido':lastname, email, password, 'alias':nameuser}) 
+        })
     }
 }
 
