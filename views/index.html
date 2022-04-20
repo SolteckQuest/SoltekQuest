@@ -14,6 +14,9 @@
     <script defer src="./main.js"></script>
     <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -32,21 +35,63 @@
                 </a>
             </button>
             <ul class="nav-menu ">
-                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link nav-menu-link_active">Ayuda</a>
-                </li>
-                <li class="nav-menu-item"><a href="#"
-                        class="nav-menu-link nav-link nav-menu-link_active">Contactanos</a></li>
+                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link nav-menu-link_active">Ayuda<i
+                            class='bx bx-help-circle'></i></a></li>
+                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link nav-menu-link_active">Contactanos<i
+                            class='bx bx-phone'></i></a></li>
             </ul>
         </nav>
     </header>
     <div class="container-form sign-in">
         <form class="formulario" action="/login" method="POST" id="login-form">
-            <h2 class="create-account">¿Tienes token?</h2>
-            <input type="text" id="token" name="token" placeholder="Token">
-            <input type="submit" value="Visualizar" class="vi-summit-btn">
-            <h3 class="h3">Para tener token hay que crear un pregunta</h3>
-            <input type="submit" value="Crear pregunta" class="ask-summit-btn">
+            <h2 class="create-account">¿Tienes una clave?</h2>
+            <input type="text" id="clave" name="clave" placeholder="Clave">
+            <input type="button" id="vi-submit-btn" value="Visualizar" class="vi-sumit-btn"
+                onclick="window.location.href = 'sesion.html';">
+            <h3 class="h3">Para tener clave hay que crear un pregunta</h3>
+            <input type="button" value="Crear pregunta" id="ask-btn" class="ask-sumit-btn">
         </form>
+    </div>
+    <!--Creando pregunta-->
+    <div class="container-sesion create-quest">
+        <form class="formulario-quest">
+            <h2>Formula tu pregunta</h2>
+            <div class="container-sesion range">
+                <form class="formulario-quest-range">
+                    <input type="text" id="id_pregunta" class="pregunta" placeholder="Pregunta">
+                    <br>
+                    <input type="range" value="5" min="0" max="10" oninput="rangevalue.value=value" />
+                    <output id="rangevalue">5</output>
+                </form>
+            </div>
+        </form>
+    </div>
+    <div class="container-sesion btn">
+        <form class="form-btn" method="POST" id="form-btn">
+            <!-- <button id="btnadd" class="agregar-btn"><i class='bx bx-add-to-queue'></i> Agregar pregunta</button>-->
+            <button id="btncancel" class="cancelar-btn">Cancelar</button>
+            <input type="button" id="btnsave" class="save-btn" value="Guardar ">
+            <!--<button id="btnsave" class="save-btn">Guardar<i class='bx bx-save'></i></button>-->
+        </form>
+    </div>
+    <!--Guardando pregunta-->
+    <div class="container-sesion save">
+        <br>
+        <br>
+        <input type="text" id="nameA" placeholder="Nombre de encuesta">
+        <br>
+        <br>
+        <h5>comparte el link para obtener datos</h5>
+        <br>
+        <output>link para responde encuesta</output><i id="icon1" class='bx bx-copy-alt'></i>
+        <br><br>
+        <h6>Con la clave puedes ingresar para ver estadisticas de la pregunta, guardala para ver mas tarde</h6>
+        <br>
+        <output>clave para acceder a ver estadisticas</output><i id="icon2" class='bx bx-copy-alt'></i>
+        <br>
+        <br>
+        <button id="btncancel1" class="cancelar-btn1">Cancelar</button>
+        <button id="btnsave1" class="save-btn1">Guardar<i class='bx bx-save'></i></button>
     </div>
 </body>
 
