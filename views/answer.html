@@ -8,23 +8,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
     <title>SoltekQuest</title>
-    <script defer src="sesion.js"></script>
+    <script defer src="./index.js"></script>
+    <script defer src="./answer.js"></script>
     <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body id="sesion-on">
+<body>
     <header class="header">
         <nav class="nav">
+            <!-- Imagen Logo -->
             <div class="Logo logo nav-link">
-                <a href="index.html">
-                    <img src="Images/Logo_Escala.png" alt="SoltekQuest">
+                <a href="#">
+                    <img src="./Images/Logo_Escala.png" alt="SoltekQuest">
                 </a>
             </div>
+            <!-- -->
             <button class="toggle nav-toggle">
-                <a href="/index.html">
+                <a href="#">
                     <i class='bx bx-menu'></i>
                 </a>
             </button>
@@ -36,8 +42,17 @@
             </ul>
         </nav>
     </header>
-    <div class="container-sesion graficas">
-
-    </div > 
+    <!--Enviando pregunta-->
+    <div class="container-user send">
+        <form id="save-question">
+            <header class="header-send">
+                <p>Gracias por su participación</p>
+            </header>
+            <input type="button" id="btnsalir" class="salir-btn" onclick="window.location.href = 'index.html';" value="Salir">
+            <button type="submit" id="btnsend2" class="send-btn">Enviar<i class='bx bxs-send'></i></button>
+        </form>
+    </div>
 </body>
+
+
 </html>

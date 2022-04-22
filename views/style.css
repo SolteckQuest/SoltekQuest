@@ -182,8 +182,8 @@ body {
 .formulario {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
     width: 400px;
-    height: 50%;
-    top: 50%;
+    height: 70%;
+    top: 70%;
     padding: 1rem;
     margin: 3rem;
     border-radius: 50%;
@@ -240,7 +240,7 @@ body {
     padding: 1rem;
     margin: 1rem;
     font-size: larger;
-    top: 15%;
+    top: -30%;
     left: 10%;
     position: relative;
     align-items: center;
@@ -372,12 +372,12 @@ input[type="range"]::-ms-track {
 .form-btn{
     justify-content:space-between;
     height: 80%;
-    width: 100%;
+    width: 110%;
     border-radius: 10px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
     position: relative;
     top: auto;
-    left: auto;
+    left: -180%;
     overflow-y:visible;
     background-color: white;
     
@@ -401,7 +401,7 @@ input[type="range"]::-ms-track {
     transition: .3s;
 }
 */
-.cancelar-btn{
+.form-btn input[id="btncancel"]{
     padding: 1rem;
     margin: 1rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
@@ -413,9 +413,9 @@ input[type="range"]::-ms-track {
     position: relative;
     border-radius: 15px;
     transition: .6s;
-    
+    color: black;
 }
-.cancelar-btn:hover{
+.form-btn input[id="btncancel"]:hover{
     background-color: #E5E5E5;
     cursor: pointer;
     transition: .6s;
@@ -516,7 +516,7 @@ input[type="range"]::-ms-track {
     transition: .3s;
 }
 
-.save i[id="icon1"], i[id="icon2"]{
+.save button[id="icon1"], button[id="icon2"]{
     margin-left: 1rem;
     border-radius: 35%;
     background-color: white;
@@ -527,13 +527,13 @@ input[type="range"]::-ms-track {
     position: relative;
 }
 
-.save i[id="icon1"]:hover, i[id="icon2"]:hover{
+.save button[id="icon1"]:hover, button[id="icon2"]:hover{
     background-color: #F59E2D;
     transition: .5s;
 }
 /*Stats*/
 .my-quest-option{
-    top: 10%;
+    top: 20%;
     width: 62.5%;
     height: 20%;
     border-radius: 10px;
@@ -553,13 +553,13 @@ input[type="range"]::-ms-track {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
     background-color: white;
     border-radius: 10px;
-    width: 57%;
-    height: 10%;
+    width: 95%;
+    height: 50%;
     padding: 1rem;
     margin: 1rem;
 }
 
-.visualize-btn{
+.back-btn{
     padding: 1rem;
     margin: 1rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
@@ -573,7 +573,7 @@ input[type="range"]::-ms-track {
     position: relative;
     border-radius: 15px;
 }
-.visualize-btn:hover{
+.back-btn:hover{
     background-color: orange;
     cursor: pointer;
     transition: .3s;
@@ -595,30 +595,187 @@ input[type="range"]::-ms-track {
     transition: .3s;
 }
 
-/*hidden and visibility*/
-.create-quest{
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
+/*user*/
+
+.user-quest {
+    width: 80%;
+    height: 30%;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: larger;
+    top: 15%;
+    left: 12%;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
 }
+
+/*Pregunta Diseño*/
+.pregunta-user {
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    color: black;
+    width: 95%;
+    height: 20%;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: larger;
+    position: relative;
+    text-align: center;
+    outline: none;
+    border: none;
+}
+
+.btn-user{
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    position: relative;
+    top: 50%;
+    left: auto;
+    border-radius: 15px;
+    width: 27%;
+}
+
+.btn-user button[class="cancelar-btn"]{
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    border: gray;
+    width: 150px;
+    font-size: small;
+    background-color: transparent;
+    align-items: center;
+    position: relative;
+    border-radius: 15px;
+    transition: .6s;
+    color: black;
+}
+.btn-user button[class="cancelar-btn"]:hover{
+    background-color: #E5E5E5;
+    cursor: pointer;
+    transition: .6s;
+}
+
+.form-btn-user input[id="btnsend"]{
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    border: white;
+    width: 150px;
+    font-size: small;
+    background-color: #F59E2D;
+    align-items: center;
+    color: white;
+    position: relative;
+    border-radius: 15px;
+}
+.form-btn-user input[id="btnsend"]:hover{
+    background-color: orange;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.header-send{
+    background-color: #F59E2D;
+    width: 100%;
+    height: 15%;
+    padding: 1rem;
+    border-start-end-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.send{
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    top: auto;
+    width: 35%;
+    height: 30%;
+    border-radius: 15px;
+    align-items: center;
+    text-align:center;
+    position: relative;
+    justify-content: space-between;
+}
+
+.send output{
+    background-color: white;
+    color: black;
+    width: 70%;
+    border-radius: 20px;
+    
+}
+
+.send input{
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    width: 80%;
+    height: 10%;
+    border-radius: 20px;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: larger;
+    top: auto;
+    position: relative;
+    text-align: center;
+    outline: none;
+    border: none;
+    top: 15%;
+}
+
+.send input[class="salir-btn"]{
+    padding: .1rem;
+    margin: 1rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    border: gray;
+    width: 17%;
+    height: 10%;
+    text-align: center;
+    font-size: small;
+    background-color: transparent;
+    position: relative;
+    border-radius: 15px;
+    transition: .6s;
+    top: 20%;
+    color: black;
+}
+.send input[class="salir-btn"]:hover{
+    background-color: #E5E5E5;
+    cursor: pointer;
+    transition: .6s;
+}
+
+.send button[class="send-btn"]{
+    padding: .1rem;
+    margin: 1rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    border: white;
+    width: 17%;
+    height: 10%;
+    font-size: small;
+    background-color: #F59E2D;
+    color: white;
+    position: relative;
+    border-radius: 15px;
+    top: 20%;
+}
+.send button[class="send-btn"]:hover{
+    background-color: orange;
+    cursor: pointer;
+    transition: .3s;
+}
+
+/*hidden and visibility*/
 
 .create-quest.active{
-    opacity: 1;
-    visibility: visible;
-}
-
-.btn{
-    position: absolute;
     opacity: 0;
     visibility: hidden;
 }
 
-.btn.active{
-    opacity: 1;
-    visibility: visible;
-}
 
-.sign-in.active{
+.btn.active{
     opacity: 0;
     visibility: hidden;
 }
@@ -632,4 +789,49 @@ input[type="range"]::-ms-track {
 .save.active{
     opacity: 1;
     visibility: visible;
+}
+
+.sign-in.active{
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+
+.my-quest-option{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.my-quest-option.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.user-quest{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.user-quest.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.btn-user{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.btn-user.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+/*Error*/
+.clave.active{
+    border-bottom: red thin solid;
 }

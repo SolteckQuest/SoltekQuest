@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>SoltekQuest</title>
+    <script defer src="./ask.js"></script>
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <!-- Imagen Logo -->
+            <div class="Logo logo nav-link">
+                <a href="index.html">
+                    <img src="./Images/Logo_Escala.png" alt="SoltekQuest">
+                </a>
+            </div>
+            <!-- -->
+            <button class="toggle nav-toggle">
+                <a href="#">
+                    <i class='bx bx-menu'></i>
+                </a>
+            </button>
+            <ul class="nav-menu ">
+                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link nav-menu-link_active">Ayuda<i
+                            class='bx bx-help-circle'></i></a></li>
+                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link nav-menu-link_active">Contactanos<i
+                            class='bx bx-phone'></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--Creando pregunta-->
+    <div class="container-sesion create-quest">
+        <form class="formulario-quest" method="POST" id="ask-form">
+            <h2>Formula tu pregunta</h2>
+            <div class="container-sesion range">
+                <form class="formulario-quest-range">
+                    <input type="text" id="pregunta" class="pregunta" placeholder="Pregunta">
+                    <br>
+                    <input type="range" value="5" min="0" max="10" oninput="rangevalue.value=value" />
+                    <output id="rangevalue">5</output>
+                </form>
+            </div>
+        </form>
+    </div>
+    <div class="container-sesion btn">
+        <form class="form-btn">
+            <!-- <button id="btnadd" class="agregar-btn"><i class='bx bx-add-to-queue'></i> Agregar pregunta</button>-->
+            <input type="button" id="btncancel" class="cancelar-btn" onclick="window.location.href = 'index.html';" value="Cancelar">
+            <input type="button" id="btnsave" class="save-btn" value="Guardar ">
+            <!--<button id="btnsave" class="save-btn">Guardar<i class='bx bx-save'></i></button>-->
+        </form>
+    </div>
+    <!--Guardando pregunta-->
+    <div class="container-sesion save">
+        <form class="form-save" method="POST" id="form-save">
+            <br>
+            <br>
+            <input type="text" id="nameA" placeholder="Nombre de encuesta">
+            <br>
+            <br>
+            <h5>comparte el link para obtener datos</h5>
+            <br>
+            <output id="link-user"></output>
+            <br><br>
+            <h6>Con la clave puedes ingresar para ver estadisticas de la pregunta, guardala para ver mas tarde</h6>
+            <br>
+            <output id="clave-user"></output>
+                
+            <br>
+            <br>
+            <button id="btncancel1" class="cancelar-btn1">Cancelar</button>
+            <button type="submit" id="btnsave1" class="save-btn1">Guardar<i class='bx bx-save'></i></button>
+        </form>
+    </div>
+</body>
+
+
+</html>

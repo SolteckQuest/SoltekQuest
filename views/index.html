@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <title>SoltekQuest</title>
     <script defer src="./index.js"></script>
-    <script defer src="./main.js"></script>
+    <script defer src="./answer.js"></script>
     <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -42,57 +42,57 @@
             </ul>
         </nav>
     </header>
+
     <div class="container-form sign-in">
-        <form class="formulario" action="/login" method="POST" id="login-form">
-            <h2 class="create-account">¿Tienes una clave?</h2>
-            <input type="text" id="clave" name="clave" placeholder="Clave">
-            <input type="button" id="vi-submit-btn" value="Visualizar" class="vi-sumit-btn"
-                onclick="window.location.href = 'sesion.html';">
+        <form class="formulario" method="POST" id="login-form">
+            <h2 class="create-account">¿Tienes una clave de encuesta?</h2>
+            <input type="text" id="clave" name="clave" class="clave" placeholder="Clave">
+            <input type="submit" id="vi-submit-btn" value="Visualizar" class="vi-sumit-btn">
+            <input type="text" id="token" name="url" class="url" placeholder="Contestar pregunta">
+            <input type="submit" id="Con-submit-btn" value="Contestar" class="Con-sumit-btn">
+            <!--onclick="window.location.href = 'sesion.html';"-->
             <h3 class="h3">Para tener clave hay que crear un pregunta</h3>
-            <input type="button" value="Crear pregunta" id="ask-btn" class="ask-sumit-btn">
+            <input type="button" value="Crear pregunta" id="ask-btn" class="ask-sumit-btn"
+                onclick="window.location.href = 'ask.html';">
+
         </form>
     </div>
-    <!--Creando pregunta-->
-    <div class="container-sesion create-quest">
-        <form class="formulario-quest">
-            <h2>Formula tu pregunta</h2>
-            <div class="container-sesion range">
+    <!--Sesion-->
+    <div class="container-sesion my-quest-option">
+        <form class="formulario-quest-stats">
+            <form class="centeritems" id="stats-form">
+                <div id="nameA"></div>
+                <div id="createAt"></div>
+                <div><i class='bx bx-user'></i></div>
+                <button class="btn-stats"><i class='bx bxs-bar-chart-alt-2'></i></button>
+                <button id="btnback" class="back-btn">Regresar</button>
+            </form>
+        </form>
+    </div>
+    <!--Users-->
+    <!--Respondiendo pregunta-->
+    <div class="container-user user-quest">
+        <form class="formulario-quest" id="ask-form">
+            <h2>Responde la pregunta</h2>
+            <div class="container-user range">
                 <form class="formulario-quest-range">
-                    <input type="text" id="id_pregunta" class="pregunta" placeholder="Pregunta">
+                    <div id="id-pregunta-user" class="pregunta-user"></div>
                     <br>
-                    <input type="range" value="5" min="0" max="10" oninput="rangevalue.value=value" />
+                    <input type="range" value="5" min="0" max="10" oninput="rangevalue.value=value" id="valornum" />
                     <output id="rangevalue">5</output>
                 </form>
             </div>
         </form>
     </div>
-    <div class="container-sesion btn">
-        <form class="form-btn" method="POST" id="form-btn">
-            <!-- <button id="btnadd" class="agregar-btn"><i class='bx bx-add-to-queue'></i> Agregar pregunta</button>-->
-            <button id="btncancel" class="cancelar-btn">Cancelar</button>
-            <input type="button" id="btnsave" class="save-btn" value="Guardar ">
-            <!--<button id="btnsave" class="save-btn">Guardar<i class='bx bx-save'></i></button>-->
+    <div class="container-user btn-user">
+        <form class="form-btn-user" id="form-btn-user">
+            <button id="btncanceluser" class="cancelar-btn">Cancelar</button>
+            <input type="button" id="btnsend" class="send-btn1" value="Enviar" onclick="window.location.href = 'answer.html';">
         </form>
     </div>
-    <!--Guardando pregunta-->
-    <div class="container-sesion save">
-        <br>
-        <br>
-        <input type="text" id="nameA" placeholder="Nombre de encuesta">
-        <br>
-        <br>
-        <h5>comparte el link para obtener datos</h5>
-        <br>
-        <output>link para responde encuesta</output><i id="icon1" class='bx bx-copy-alt'></i>
-        <br><br>
-        <h6>Con la clave puedes ingresar para ver estadisticas de la pregunta, guardala para ver mas tarde</h6>
-        <br>
-        <output>clave para acceder a ver estadisticas</output><i id="icon2" class='bx bx-copy-alt'></i>
-        <br>
-        <br>
-        <button id="btncancel1" class="cancelar-btn1">Cancelar</button>
-        <button id="btnsave1" class="save-btn1">Guardar<i class='bx bx-save'></i></button>
-    </div>
+    
+    <!--Graficas-->
+    
 </body>
 
 
