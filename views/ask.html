@@ -44,13 +44,11 @@
     <!--Creando pregunta-->
     <div class="container-sesion create-quest">
         <form class="formulario-quest" method="POST" id="ask-form">
-            <h2>Formula tu pregunta</h2>
             <div class="container-sesion range">
                 <form class="formulario-quest-range">
-                    <input type="text" id="pregunta" class="pregunta" placeholder="Pregunta">
+                    <output id="id-pregunta-user" class="pregunta-user">¿Que tan probable es que recomiendes este
+                        servicio a tus amigos o familiares?</output>
                     <br>
-                    <input type="range" value="5" min="0" max="10" oninput="rangevalue.value=value" />
-                    <output id="rangevalue">5</output>
                 </form>
             </div>
         </form>

@@ -16,19 +16,12 @@ const btnSave = document.querySelector(".save-btn"),
     btnIn = document.querySelector(".btn");
 
 document.addEventListener("click", e => {
-    const Pregunta = document.getElementById("pregunta").value;
-    if (Pregunta != '') {
-        btnSave.disable = false;
-        if (e.target === btnSave || e.target === btnCancel1) {
+    if (e.target === btnSave || e.target === btnCancel1) {
             SaveIn.classList.toggle("active");
             var rString = randomString(15, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
             document.getElementById("link-user").innerHTML =  rString;
             var rString1 = randomString(15, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
             document.getElementById("clave-user").innerHTML = rString1;
-        }
-    }
-    if(Pregunta) {
-        btnSave.disable = true
     }
     if (e.target === btnCancel) {
         SaveIn.classList.toggle("active");
@@ -70,7 +63,7 @@ const RegisterAsk = () => {
         e.preventDefault()
         const enlace = document.getElementById('link-user').value
         const clave = document.getElementById('clave-user').value
-        const ask = document.getElementById('pregunta').value
+        const ask = 'pregunta'
         const nameA = document.getElementById('nameA').value
         fetch('https://36oqqx1tq4.execute-api.us-west-1.amazonaws.com/api/encuestas', {
             method: 'POST',

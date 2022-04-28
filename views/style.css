@@ -110,7 +110,6 @@ body {
         padding: 20px 0;
         height: calc(100% - 60px);
         overflow-y: auto;
-
         left: 100%;
         transition: left 0.3s;
     }
@@ -132,6 +131,9 @@ body {
         left: 50%;
     }
 }
+
+
+
 
 .container-form {
     width: 90%;
@@ -182,11 +184,11 @@ body {
 .formulario {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
     width: 400px;
-    height: 70%;
-    top: 70%;
+    height: 600px;
+    top: 100px;
     padding: 1rem;
     margin: 3rem;
-    border-radius: 50%;
+    border-radius: 50px;
     background-color: white;
     text-align: center;
 }
@@ -197,7 +199,7 @@ body {
 }
 
 .formulario input {
-    width: 70%;
+    width: 300px;
     display: flex;
     margin: auto;
     margin-bottom: 1rem;
@@ -211,8 +213,9 @@ body {
     color: black;
 }
 
-.formulario input[type="submit"], input[type="button"] {
-    width: 40%;
+.formulario input[type="submit"],
+input[type="button"] {
+    width: 150px;
     display: inline-block;
     align-items: center;
     justify-content: space-around;
@@ -227,21 +230,22 @@ body {
     color: white;
 }
 
-.formulario input[type="submit"]:hover, input[type="button"]:hover {
+.formulario input[type="submit"]:hover,
+input[type="button"]:hover {
     background-color: orange;
     transition: all .3s ease-in;
 }
 
 /*Formulario pregunta y respuesta*/
 .create-quest {
-    width: 80%;
-    height: 30%;
+    width: 1200px;
+    height: 250px;
     border-radius: 10px;
     padding: 1rem;
     margin: 1rem;
     font-size: larger;
-    top: -30%;
-    left: 10%;
+    top: -200px;
+    left: 150px;
     position: relative;
     align-items: center;
     text-align: center;
@@ -267,121 +271,125 @@ body {
 /*Calificacion Diseño*/
 input,
 output {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 1em;
-  font-family: Arial, sans-serif;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
 }
 
-output {
-  background: #F59E2D;
-  padding: 5px 16px;
-  border-radius: 3px;
-  color: #fff;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+input[id="rangevalue"] {
+    background: #F59E2D;
+    padding: 5px 16px;
+    border-radius: 3px;
+    color: #fff;
+    width: auto;
+    outline: none;
+    border: none;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
 }
 
 input[type="number"] {
-  width: 40px;
-  padding: 4px 5px;
-  border: 1px solid #bbb;
-  border-radius: 3px;
+    width: 40px;
+    padding: 4px 5px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
 }
 
 input[type="range"] {
-  -webkit-appearance: none;
-  margin-right: 15px;
-  width: 200px;
-  height: 7px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
-  border-radius: 5px;
-  background-image: linear-gradient(#F59E2D, #F59E2D);
-  background-size: 50% 100%;
-  background-repeat: no-repeat;
+    -webkit-appearance: none;
+    margin-right: 15px;
+    width: 200px;
+    height: 7px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    background-image: linear-gradient(#F59E2D, #F59E2D);
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
 }
 
 /* Input Thumb */
 input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background: #F59E2D;
-  cursor: ew-resize;
-  box-shadow: 0 0 2px 0 #555;
-  transition: background .3s ease-in-out;
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #F59E2D;
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background .3s ease-in-out;
 }
 
 input[type="range"]::-moz-range-thumb {
-  -webkit-appearance: none;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background: #F59E2D;
-  cursor: ew-resize;
-  box-shadow: 0 0 2px 0 #555;
-  transition: background .3s ease-in-out;
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #F59E2D;
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background .3s ease-in-out;
 }
 
 input[type="range"]::-ms-thumb {
-  -webkit-appearance: none;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background: #F59E2D;
-  cursor: ew-resize;
-  box-shadow: 0 0 2px 0 #555;
-  transition: background .3s ease-in-out;
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #F59E2D;
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background .3s ease-in-out;
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
-  background: #F59E2D;
+    background: #F59E2D;
 }
 
 input[type="range"]::-moz-range-thumb:hover {
-  background: #F59E2D;
+    background: #F59E2D;
 }
 
 input[type="range"]::-ms-thumb:hover {
-  background: #F59E2D;
+    background: #F59E2D;
 }
 
 /* Input Track */
-input[type=range]::-webkit-slider-runnable-track  {
-  -webkit-appearance: none;
-  box-shadow: none;
-  border: none;
-  background: transparent;
+input[type=range]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
 }
 
 input[type=range]::-moz-range-track {
-  -webkit-appearance: none;
-  box-shadow: none;
-  border: none;
-  background: transparent;
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
 }
 
 input[type="range"]::-ms-track {
-  -webkit-appearance: none;
-  box-shadow: none;
-  border: none;
-  background: transparent;
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
 }
 
 /*Botones*/
-.form-btn{
-    justify-content:space-between;
-    height: 80%;
-    width: 110%;
+.form-btn {
+    justify-content: space-between;
+    height: 80px;
+    width: 370px;
     border-radius: 10px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
     position: relative;
     top: auto;
-    left: -180%;
-    overflow-y:visible;
+    left: -170%;
+    overflow-y: visible;
     background-color: white;
-    
+
 }
+
 /*.agregar-btn{
     padding: 1rem;
     margin: 1rem;
@@ -401,7 +409,7 @@ input[type="range"]::-ms-track {
     transition: .3s;
 }
 */
-.form-btn input[id="btncancel"]{
+.form-btn input[id="btncancel"] {
     padding: 1rem;
     margin: 1rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
@@ -415,13 +423,14 @@ input[type="range"]::-ms-track {
     transition: .6s;
     color: black;
 }
-.form-btn input[id="btncancel"]:hover{
+
+.form-btn input[id="btncancel"]:hover {
     background-color: #E5E5E5;
     cursor: pointer;
     transition: .6s;
 }
 
-.form-btn input[id="btnsave"]{
+.form-btn input[id="btnsave"] {
     padding: 1rem;
     margin: 1rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
@@ -434,34 +443,36 @@ input[type="range"]::-ms-track {
     position: relative;
     border-radius: 15px;
 }
-.form-btn input[id="btnsave"]:hover{
+
+.form-btn input[id="btnsave"]:hover {
     background-color: orange;
     cursor: pointer;
     transition: .3s;
 }
 
 /*Guardar*/
-.save{
+.save {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
     background-color: white;
-    top: 25%;
-    width: 35%;
-    height: 45%;
+    top: 150px;
+    width: 600px;
+    height: 350px;
     border-radius: 15px;
     align-items: center;
-    text-align:center;
+    text-align: center;
     position: relative;
     justify-content: space-between;
 }
 
-.save output{
+.save output {
     background-color: white;
     color: black;
-    width: 70%;
+    width: 500px;
     border-radius: 20px;
 }
 
-.save input{
+/*Nombre de encuesta*/
+.save input {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
     width: 80%;
     height: 10%;
@@ -476,7 +487,7 @@ input[type="range"]::-ms-track {
     border: none;
 }
 
-.save button[class="cancelar-btn1"]{
+.save button[class="cancelar-btn1"] {
     padding: .1rem;
     margin: 1rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
@@ -489,15 +500,16 @@ input[type="range"]::-ms-track {
     position: relative;
     border-radius: 15px;
     transition: .6s;
-    
+
 }
-.save button[class="cancelar-btn1"]:hover{
+
+.save button[class="cancelar-btn1"]:hover {
     background-color: #E5E5E5;
     cursor: pointer;
     transition: .6s;
 }
 
-.save button[class="save-btn1"]{
+.save button[class="save-btn1"] {
     padding: .1rem;
     margin: 1rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
@@ -510,13 +522,15 @@ input[type="range"]::-ms-track {
     position: relative;
     border-radius: 15px;
 }
-.save button[class="save-btn1"]:hover{
+
+.save button[class="save-btn1"]:hover {
     background-color: orange;
     cursor: pointer;
     transition: .3s;
 }
 
-.save button[id="icon1"], button[id="icon2"]{
+.save button[id="icon1"],
+button[id="icon2"] {
     margin-left: 1rem;
     border-radius: 35%;
     background-color: white;
@@ -527,15 +541,17 @@ input[type="range"]::-ms-track {
     position: relative;
 }
 
-.save button[id="icon1"]:hover, button[id="icon2"]:hover{
+.save button[id="icon1"]:hover,
+button[id="icon2"]:hover {
     background-color: #F59E2D;
     transition: .5s;
 }
+
 /*Stats*/
-.my-quest-option{
-    top: 20%;
-    width: 62.5%;
-    height: 20%;
+.my-quest-option {
+    top: 180px;
+    width: 980px;
+    height: 170px;
     border-radius: 10px;
     padding: 1rem;
     margin: 1rem;
@@ -543,23 +559,24 @@ input[type="range"]::-ms-track {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
     display: flex;
 }
-.formulario-quest-stats{
+
+.formulario-quest-stats {
     font-size: larger;
     display: flex;
-    position:absolute;
+    position: absolute;
     text-align: center;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
     background-color: white;
     border-radius: 10px;
-    width: 95%;
-    height: 50%;
+    width: 900px;
+    height: 100px;
     padding: 1rem;
     margin: 1rem;
 }
 
-.back-btn{
+.back-btn {
     padding: 1rem;
     margin: 1rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
@@ -573,13 +590,14 @@ input[type="range"]::-ms-track {
     position: relative;
     border-radius: 15px;
 }
-.back-btn:hover{
+
+.back-btn:hover {
     background-color: orange;
     cursor: pointer;
     transition: .3s;
 }
 
-.btn-stats{
+.btn-stats {
     background-color: transparent;
     border: white;
     color: black;
@@ -588,9 +606,9 @@ input[type="range"]::-ms-track {
     margin: .1rem;
 }
 
-.btn-stats:hover{
+.btn-stats:hover {
     background-color: #F59E2D;
-    border-radius: 50%;
+    border-radius: 180px;
     color: white;
     transition: .3s;
 }
@@ -598,14 +616,14 @@ input[type="range"]::-ms-track {
 /*user*/
 
 .user-quest {
-    width: 80%;
-    height: 30%;
+    width: 1200px;
+    height: 230px;
     border-radius: 10px;
     padding: 1rem;
     margin: 1rem;
     font-size: larger;
-    top: 15%;
-    left: 12%;
+    top: 100px;
+    left: 170px;
     position: relative;
     align-items: center;
     text-align: center;
@@ -617,8 +635,8 @@ input[type="range"]::-ms-track {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
     background-color: white;
     color: black;
-    width: 95%;
-    height: 20%;
+    width: 1140px;
+    height: 46px;
     border-radius: 10px;
     padding: 1rem;
     margin: 1rem;
@@ -629,18 +647,18 @@ input[type="range"]::-ms-track {
     border: none;
 }
 
-.btn-user{
+.btn-user {
     padding: 1rem;
     margin: 1rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
     position: relative;
-    top: 50%;
+    top: 400px;
     left: auto;
     border-radius: 15px;
-    width: 27%;
+    width: 400px;
 }
 
-.btn-user button[class="cancelar-btn"]{
+.btn-user button[class="cancelar-btn"] {
     padding: 1rem;
     margin: 1rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
@@ -654,13 +672,14 @@ input[type="range"]::-ms-track {
     transition: .6s;
     color: black;
 }
-.btn-user button[class="cancelar-btn"]:hover{
+
+.btn-user button[class="cancelar-btn"]:hover {
     background-color: #E5E5E5;
     cursor: pointer;
     transition: .6s;
 }
 
-.form-btn-user input[id="btnsend"]{
+.form-btn-user input[id="btnsend"] {
     padding: 1rem;
     margin: 1rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
@@ -673,13 +692,14 @@ input[type="range"]::-ms-track {
     position: relative;
     border-radius: 15px;
 }
-.form-btn-user input[id="btnsend"]:hover{
+
+.form-btn-user input[id="btnsend"]:hover {
     background-color: orange;
     cursor: pointer;
     transition: .3s;
 }
 
-.header-send{
+.header-send {
     background-color: #F59E2D;
     width: 100%;
     height: 15%;
@@ -688,28 +708,27 @@ input[type="range"]::-ms-track {
     border-top-left-radius: 15px;
 }
 
-.send{
+.send {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
     background-color: white;
     top: auto;
-    width: 35%;
-    height: 30%;
+    width: 400px;
+    height: 100px;
     border-radius: 15px;
     align-items: center;
-    text-align:center;
+    text-align: center;
     position: relative;
     justify-content: space-between;
 }
 
-.send output{
+.send output {
     background-color: white;
     color: black;
     width: 70%;
     border-radius: 20px;
-    
 }
 
-.send input{
+.send input {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
     width: 80%;
     height: 10%;
@@ -725,7 +744,7 @@ input[type="range"]::-ms-track {
     top: 15%;
 }
 
-.send input[class="salir-btn"]{
+.send input[class="salir-btn"] {
     padding: .1rem;
     margin: 1rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
@@ -741,13 +760,14 @@ input[type="range"]::-ms-track {
     top: 20%;
     color: black;
 }
-.send input[class="salir-btn"]:hover{
+
+.send input[class="salir-btn"]:hover {
     background-color: #E5E5E5;
     cursor: pointer;
     transition: .6s;
 }
 
-.send button[class="send-btn"]{
+.send input[class="send-btn"] {
     padding: .1rem;
     margin: 1rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
@@ -761,77 +781,177 @@ input[type="range"]::-ms-track {
     border-radius: 15px;
     top: 20%;
 }
-.send button[class="send-btn"]:hover{
+
+.send input[class="send-btn"]:hover {
     background-color: orange;
     cursor: pointer;
     transition: .3s;
 }
 
+/*Responsive*/
+@media (max-width: 700px) {
+
+    .user-quest {
+        width: 100%;
+        height: 230px;
+        border-radius: 10px;
+        padding: 1rem;
+        margin: 1rem;
+        font-size:small;
+        top: 100px;
+        left: 0;
+        position: relative;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    }
+    .pregunta-user {
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+        background-color: white;
+        color: black;
+        width: 90%;
+        height: 10%;
+        border-radius: 10px;
+        padding: 1rem;
+        margin: 1rem;
+        font-size: larger;
+        position: relative;
+        text-align: center;
+        outline: none;
+        border: none;
+    }
+    .btn-user {
+        padding: 1rem;
+        margin: 1rem;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+        position: relative;
+        top: 400px;
+        left: 0;
+        border-radius: 15px;
+        width: 90%;
+    }
+    .btn-user button[class="cancelar-btn"] {
+        padding: 1rem;
+        margin: 1rem;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+        border: gray;
+        width: 100px;
+        font-size: small;
+        background-color: transparent;
+        align-items: center;
+        position: relative;
+        border-radius: 15px;
+        transition: .6s;
+        color: black;
+    }
+    
+    .btn-user button[class="cancelar-btn"]:hover {
+        background-color: #E5E5E5;
+        cursor: pointer;
+        transition: .6s;
+    }
+    
+    .form-btn-user input[id="btnsend"] {
+        padding: 1rem;
+        margin: 1rem;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+        border: white;
+        width: 100px;
+        font-size: small;
+        background-color: #F59E2D;
+        align-items: center;
+        color: white;
+        position: relative;
+        border-radius: 15px;
+    }
+    
+    .form-btn-user input[id="btnsend"]:hover {
+        background-color: orange;
+        cursor: pointer;
+        transition: .3s;
+    }
+}
+
 /*hidden and visibility*/
 
-.create-quest.active{
+.create-quest.active {
     opacity: 0;
     visibility: hidden;
 }
 
 
-.btn.active{
+.btn.active {
     opacity: 0;
     visibility: hidden;
 }
 
-.save{
+.save {
     position: absolute;
     opacity: 0;
     visibility: hidden;
 }
 
-.save.active{
+.save.active {
     opacity: 1;
     visibility: visible;
 }
 
-.sign-in.active{
+.sign-in.active {
     opacity: 0;
     visibility: hidden;
 }
 
 
 
-.my-quest-option{
+.my-quest-option {
     position: absolute;
     opacity: 0;
     visibility: hidden;
 }
 
-.my-quest-option.active{
+.my-quest-option.active {
     opacity: 1;
     visibility: visible;
 }
 
-.user-quest{
+.user-quest {
     position: absolute;
     opacity: 0;
     visibility: hidden;
 }
 
-.user-quest.active{
+.user-quest.active {
     opacity: 1;
     visibility: visible;
 }
 
-.btn-user{
+.btn-user {
     position: absolute;
     opacity: 0;
     visibility: hidden;
 }
 
-.btn-user.active{
+.btn-user.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.send {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.send.active {
     opacity: 1;
     visibility: visible;
 }
 
 /*Error*/
-.clave.active{
+.clave.active {
+    border-bottom: red thin solid;
+}
+
+.token.active {
     border-bottom: red thin solid;
 }

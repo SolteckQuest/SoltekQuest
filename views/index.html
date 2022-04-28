@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <title>SoltekQuest</title>
     <script defer src="./index.js"></script>
-    <script defer src="./answer.js"></script>
     <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -48,7 +47,7 @@
             <h2 class="create-account">¿Tienes una clave de encuesta?</h2>
             <input type="text" id="clave" name="clave" class="clave" placeholder="Clave">
             <input type="submit" id="vi-submit-btn" value="Visualizar" class="vi-sumit-btn">
-            <input type="text" id="token" name="url" class="url" placeholder="Contestar pregunta">
+            <input type="text" id="token" name="url" class="token" placeholder="Contestar pregunta">
             <input type="submit" id="Con-submit-btn" value="Contestar" class="Con-sumit-btn">
             <!--onclick="window.location.href = 'sesion.html';"-->
             <h3 class="h3">Para tener clave hay que crear un pregunta</h3>
@@ -76,10 +75,21 @@
             <h2>Responde la pregunta</h2>
             <div class="container-user range">
                 <form class="formulario-quest-range">
-                    <div id="id-pregunta-user" class="pregunta-user"></div>
+                    <output id="id-pregunta-user" class="pregunta-user">¿Que tan probable es que recomiendes este
+                        servicio a tus amigos o familiares?</output>
                     <br>
-                    <input type="range" value="5" min="0" max="10" oninput="rangevalue.value=value" id="valornum" />
-                    <output id="rangevalue">5</output>
+                    <input type="button" id="rangevalue" class="rangevalue1" value="1">
+                    <input type="button" id="rangevalue" class="rangevalue2" value="2">
+                    <input type="button" id="rangevalue" class="rangevalue3" value="3">
+                    <input type="button" id="rangevalue" class="rangevalue4" value="4">
+                    <input type="button" id="rangevalue" class="rangevalue5" value="5">
+                    <input type="button" id="rangevalue" class="rangevalue6" value="6">
+                    <input type="button" id="rangevalue" class="rangevalue7" value="7">
+                    <input type="button" id="rangevalue" class="rangevalue8" value="8">
+                    <input type="button" id="rangevalue" class="rangevalue9" value="9">
+                    <input type="button" id="rangevalue" class="rangevalue10" value="10">
+                    <!--<input type="range" value="5" min="0" max="10" oninput="rangevalue.value=value" id="valornum" />
+                    -->
                 </form>
             </div>
         </form>
@@ -87,12 +97,21 @@
     <div class="container-user btn-user">
         <form class="form-btn-user" id="form-btn-user">
             <button id="btncanceluser" class="cancelar-btn">Cancelar</button>
-            <input type="button" id="btnsend" class="send-btn1" value="Enviar" onclick="window.location.href = 'answer.html';">
+            <input type="button" id="btnsend" class="send-btn1" value="Enviar">
         </form>
     </div>
-    
+    <!--Enviando pregunta-->
+    <div class="container-user send">
+        <form id="save-question" method="POST"  id="send-answer">
+            <header class="header-send">
+                <p>Gracias por su participación</p>
+            </header>
+            <input type="button" id="btnsalir" class="salir-btn" onclick="window.location.href = 'index.html';" value="Salir">
+            <input type="submit" id="btnsend2" class="send-btn" value="Enviar">
+        </form>
+    </div>
     <!--Graficas-->
-    
+
 </body>
 
 
