@@ -114,18 +114,17 @@ const renderLogin = () => {
             },
         })
         GlobalBand = 0
-        if (clave) {
+        if (clave){
             VarialClave = true;
             Sesion(clave)
-            EncontrarId(clave)
         }
-
         if (url) {
             VarialToken = true;
             Encuestado(url)
         }
     }
 }
+
 //Sesion
 const Sesion = (clave) => {
     fetch(`https://36oqqx1tq4.execute-api.us-west-1.amazonaws.com/api/encuestas/clave/${clave}`, {
@@ -151,7 +150,6 @@ function IdE(data) {
 
 //Encuestado
 const Encuestado = (url) => {
-
     fetch(`https://36oqqx1tq4.execute-api.us-west-1.amazonaws.com/api/encuestas/url/${url}`, {
         method: 'GET',
         headers: {
@@ -213,14 +211,16 @@ const EncuestadoData = (data) => {
 }
 
 //Respondiendo
+const btnSendAsnwer = document.querySelector(".send-btn")
+
 const renderAnswer = (valorid, url, nombre) => {
     const id = url
     const answer = valorid
     const nameA = nombre
     const DatasQ = { 'nombre': nameA, 'responses': answer, 'encuestaid': id }
-    document.addEventListener("submit", e => {
-        e.preventDefault()
-        fetch('https://36oqqx1tq4.execute-api.us-west-1.amazonaws.com/api/respuestas', {
+    document.addEventListener("click", e => {
+        if (e.target === btnSendAsnwer){
+            fetch('https://36oqqx1tq4.execute-api.us-west-1.amazonaws.com/api/respuestas', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -232,8 +232,8 @@ const renderAnswer = (valorid, url, nombre) => {
         alert("Pregunta respondida satisfactoriamente")
         sendIn.classList.toggle("active");
         window.location.href = 'index.html';
+        }
     });
-
 }
 
 /*GRAFICAS*/
@@ -420,42 +420,12 @@ const mostrarData = (data) => {
 /*END GRAFICAS*/
 
 
-
-
-/*const EncontrarId = (clave) => {
-    fetch(`https://36oqqx1tq4.execute-api.us-west-1.amazonaws.com/api/encuestas/clave/${clave}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    }).then(response => response.json())
-        .then(data => EncontarIdAsk(data))
-        .catch(error => console.log(error))
-    
-    console.log(clave);
-
-
-}
-
-const EncontarIdAsk = (data) => {
-    return data.data._id;
-}*/
-
 window.onload = () => {
     renderLogin()
     if (VarialClave == true) {
         Sesion()
-        EncontrarId()
     }
-    if (VarialToken == true) {
-        Encuestado()
-        renderAnswer()
-    }
-
 }
-
-
-
 //Range input
 const rangeInputs = document.querySelectorAll('input[type="range"]')
 const numberInput = document.querySelector('input[type="number"]')

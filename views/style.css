@@ -236,6 +236,26 @@ input[id="ask-btn"]:hover {
     transition: all .3s ease-in;
 }
 
+.back-btn_graf{
+    width: 150px;
+    display: inline-block;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    border: solid thin white;
+    padding: .7rem;
+    border-radius: 2rem;
+    background-color: #F59E2D;
+    font-weight: 3rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: white;
+}
+
+.back-btn_graf:hover{
+    background-color: orange;
+    transition: all .3s ease-in;
+}
 /*Formulario pregunta y respuesta*/
 .create-quest {
     width: 1200px;
@@ -287,6 +307,8 @@ input[id="rangevalue"] {
     border: none;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
 }
+
+
 
 input[type="number"] {
     width: 40px;
@@ -793,6 +815,14 @@ button[id="icon2"]:hover {
 }
 
 /*Nuevo Codigo*/
+input[id="rangevalue"]:hover {
+    background-color:cornflowerblue;
+    cursor: pointer;
+}
+
+input[id="rangevalue"]:focus{
+    background-color:cornflowerblue;
+}
 
 /*Responsive*/
 @media (max-width: 700px) {
