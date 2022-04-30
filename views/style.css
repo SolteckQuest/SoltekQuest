@@ -214,7 +214,7 @@ body {
 }
 
 .formulario input[type="submit"],
-input[type="button"] {
+input[id="ask-btn"] {
     width: 150px;
     display: inline-block;
     align-items: center;
@@ -231,7 +231,7 @@ input[type="button"] {
 }
 
 .formulario input[type="submit"]:hover,
-input[type="button"]:hover {
+input[id="ask-btn"]:hover {
     background-color: orange;
     transition: all .3s ease-in;
 }
@@ -598,19 +598,23 @@ button[id="icon2"]:hover {
 }
 
 .btn-stats {
-    background-color: transparent;
-    border: white;
+    background-color: #F59E2D;
+    border: black;
     color: black;
     align-items: center;
     padding: .1rem;
     margin: .1rem;
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
 }
 
 .btn-stats:hover {
     background-color: #F59E2D;
     border-radius: 180px;
     color: white;
-    transition: .3s;
+    transition: .6s;
+    cursor: pointer;
 }
 
 /*user*/
@@ -788,6 +792,8 @@ button[id="icon2"]:hover {
     transition: .3s;
 }
 
+/*Nuevo Codigo*/
+
 /*Responsive*/
 @media (max-width: 700px) {
 
@@ -943,6 +949,17 @@ button[id="icon2"]:hover {
 }
 
 .send.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.graficas{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.graficas.active {
     opacity: 1;
     visibility: visible;
 }

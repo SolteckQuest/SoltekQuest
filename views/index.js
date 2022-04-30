@@ -1,3 +1,4 @@
+
 let ruta = 'login'
 let user = {}
 
@@ -24,7 +25,6 @@ var VarialToken = false;
 navToggle.addEventListener("click", () => {
     navMenu.classList.toggle("nav-menu-visible");
 });
-
 
 //Botones
 document.addEventListener("click", e => {
@@ -117,7 +117,9 @@ const renderLogin = () => {
         if (clave) {
             VarialClave = true;
             Sesion(clave)
+            EncontrarId(clave)
         }
+
         if (url) {
             VarialToken = true;
             Encuestado(url)
@@ -136,11 +138,17 @@ const Sesion = (clave) => {
         .catch(error => console.log(error))
     mostrarDataSesion()
 }
-
+var _id_ = ''
 const mostrarDataSesion = (data) => {
     document.getElementById("nameA").innerHTML = data.data.nombre
     document.getElementById("createAt").innerHTML = data.data.createdAt
+    window._id_ = IdE(data)
 }
+
+function IdE(data) {
+    return data.data._id
+}
+
 //Encuestado
 const Encuestado = (url) => {
 
@@ -155,8 +163,9 @@ const Encuestado = (url) => {
     EncuestadoData()
 }
 
-const EncuestadoData = (data) => {
 
+
+const EncuestadoData = (data) => {
     const btn1 = document.querySelector(".rangevalue1");
     const btn2 = document.querySelector(".rangevalue2");
     const btn3 = document.querySelector(".rangevalue3");
@@ -169,7 +178,6 @@ const EncuestadoData = (data) => {
     const btn10 = document.querySelector(".rangevalue10");
     var nombre = data.data.nombre;
     var id = data.data._id;
-
     document.addEventListener("click", e => {
         if (e.target === btn1) {
             renderAnswer(1, id, nombre)
@@ -225,18 +233,225 @@ const renderAnswer = (valorid, url, nombre) => {
         sendIn.classList.toggle("active");
         window.location.href = 'index.html';
     });
-   
+
 }
+
+/*GRAFICAS*/
+const btnStat = document.querySelector(".btn-stats"),
+    GraficasIn = document.querySelector(".graficas"),
+    btnRegresar = document.querySelector(".back-btn_graf");
+
+document.addEventListener("click", e => {
+    if (e.target === btnStat || e.target === btnRegresar) {
+        GraficasIn.classList.toggle("active")
+        sesionIn.classList.toggle("active");
+        Pofavor()
+    }
+})
+const Pofavor = () => {
+    const url = `https://36oqqx1tq4.execute-api.us-west-1.amazonaws.com/api/respuestas/enc/${window._id_}`;
+
+
+    fetch(url)
+        .then((response) => response.json())
+        .then((datas) => {
+            crearchart(datas);
+            crearchart2(datas);
+            mostrarData(datas);
+        })
+        .catch((error) => console.log(error));
+}
+
+
+
+
+var crearchart = (datas) => {
+    let array = [];
+    let array2 = [];
+    distractores = 0;
+    pasivos = 0;
+    promotores = 0;
+    contadorMX = 0;
+    for (let i = 0; i < datas.data.length; i++) {
+
+        array[i] = datas.data[i].responses;
+        array2[i] = datas.data[i].createdAt.slice(0, -17);//new Date(.slice(5, -17)
+        if (array[i] <= 6) {
+            distractores = distractores + 1;
+        } else if (array[i] <= 8) {
+            pasivos = pasivos + 1;
+        } else if (array[i] <= 10) {
+            promotores = promotores + 1;
+        }
+        contadorMX = contadorMX + 1;
+    }
+    dis = (distractores / contadorMX) * 100;
+    pas = (pasivos / contadorMX) * 100;
+    pro = (promotores / contadorMX) * 100;
+    NPS = pro - dis;
+    NPS = Math.ceil(NPS) + "%";
+
+    let meses = [];
+    let valores = [];
+    dm = 3;
+    pam = 2;
+    prom = 6;
+    conMXm = 11;
+    cont1 = 0;
+    cont2 = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] <= 6) {
+            dm = dm + 1;
+        } else if (array[i] <= 8) {
+            pam = pam + 1;
+        } else if (array[i] <= 10) {
+            prom = prom + 1;
+        }
+        conMXm = conMXm + 1;
+        if (array2[i] != array2[i + 1]) {
+            meses[cont1] = array2[i];
+            cont1 = cont1 + 1;
+
+            di = (dm / conMXm) * 100;
+            pa = (pam / conMXm) * 100;
+            pr = (prom / conMXm) * 100;
+            N = pr - di;
+            N = Math.ceil(N);
+            valores[cont2] = N;
+            cont2 = cont2 + 1;
+            dm = 0;
+            pam = 0;
+            prom = 0;
+            conMXm = 0;
+        }
+    }
+    const data = {
+        labels: meses,
+        datasets: [
+            {
+                label: "NPS",
+                data: valores,
+                backgroundColor: [
+                    "rgba(255, 26, 104, 0.2)",
+                    "rgba(54, 162, 235, 0.2)",
+                    "rgba(255, 206, 86, 0.2)",
+                    "rgba(75, 192, 192, 0.2)",
+                    "rgba(153, 102, 255, 0.2)",
+                    "rgba(255, 159, 64, 0.2)",
+                    "rgba(0, 0, 0, 0.2)",
+                ],
+                borderColor: [
+                    "rgba(255, 26, 104, 1)",
+                    "rgba(54, 162, 235, 1)",
+                    "rgba(255, 206, 86, 1)",
+                    "rgba(75, 192, 192, 1)",
+                    "rgba(153, 102, 255, 1)",
+                    "rgba(255, 159, 64, 1)",
+                    "rgba(0, 0, 0, 1)",
+                ],
+                borderWidth: 2,
+            },
+        ],
+
+    };
+
+    // config
+    const config = {
+        type: "line",
+        data: data,
+        options: {
+            resposive: true,
+            maintainAspectRatio: false,
+            scales: {
+                // x: {
+                //     type: 'time',
+                // //   position: 'top',
+                // },
+                y: {
+                    beginAtZero: true,
+                    // grid:{
+                    //   color
+                    // }
+                },
+            },
+        },
+    };
+    const myChart = new Chart(document.getElementById("myChart"), config);
+};
+var crearchart2 = (datas) => {
+    let NPS = (pro - dis);
+    NPS = Math.ceil(NPS) + "%";
+    document.getElementById("porcentaje").innerHTML = NPS;
+    const data2 = {
+        labels: ["distractores", "pasivos", "promotores"],
+        datasets: [
+            {
+                label: "NPS",
+                data: [distractores, pasivos, promotores],
+                backgroundColor: [
+                    "red",
+                    "yellow",
+                    "green",
+                ],
+                borderWidth: 2,
+                cutout: '80%'
+            },
+        ],
+    };
+
+    const config2 = {
+        type: "doughnut",
+        data: data2,
+        options: {
+            resposive: true,
+            maintainAspectRatio: false,
+        }
+    };
+    const myChart = new Chart(document.getElementById("myChart2"), config2);
+}
+
+const mostrarData = (data) => {
+    body = `<tr><td>${distractores}</td><td>${pasivos}</td><td>${promotores}</td><td>${contadorMX}</td><td>${NPS}</td></tr>`;
+    // }
+    document.getElementById("data").innerHTML = body;
+
+};
+
+/*END GRAFICAS*/
+
+
+
+
+/*const EncontrarId = (clave) => {
+    fetch(`https://36oqqx1tq4.execute-api.us-west-1.amazonaws.com/api/encuestas/clave/${clave}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    }).then(response => response.json())
+        .then(data => EncontarIdAsk(data))
+        .catch(error => console.log(error))
+    
+    console.log(clave);
+
+
+}
+
+const EncontarIdAsk = (data) => {
+    return data.data._id;
+}*/
 
 window.onload = () => {
     renderLogin()
-    if(VarialClave == true){
+    if (VarialClave == true) {
         Sesion()
+        EncontrarId()
     }
-    if(VarialToken == true){
+    if (VarialToken == true) {
         Encuestado()
         renderAnswer()
     }
+
 }
 
 
