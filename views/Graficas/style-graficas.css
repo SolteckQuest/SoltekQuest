@@ -1,0 +1,54 @@
+body{
+    background-color: #F59E2D;
+    margin: 0;
+} 
+
+.container-sesion{
+    margin: 10px;
+    border: 2px solid red;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+} 
+
+.Box1{
+    border: 0.5px solid black;
+    padding-bottom: 20px;
+    /* align-self: center; */
+    width: 100%;
+    height: 30vh;
+}
+
+.Box2{
+    margin: 5px;
+    width: 45%; 
+    height: 60vh;   
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.chartbox{
+    margin: 5px;
+    display: flex;
+    /* background-color: aquamarine; */
+}
+.porcentaje{
+    margin: 5px;
+    font-size:  4vw;
+    position: absolute;
+    /* background-color: blue; */
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 2px solid black;
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 8px;
+  }
