@@ -22,6 +22,13 @@ var GlobalBand = 1;
 var VarialLogin = false;
 var VarialClave = false;
 var VarialToken = false;
+const btnSend = document.querySelector(".send-btn1"),
+    btnCancelSend = document.querySelector(".salir-btn"),
+    Conbtn = document.querySelector(".Con-sumit-btn"),
+    BtnUserIn = document.querySelector(".btn-user"),
+    userIn = document.querySelector(".user-quest"),
+    sendIn = document.querySelector(".send"),
+    btnSend1 = document.querySelector(".send-btn");
 navToggle.addEventListener("click", () => {
     navMenu.classList.toggle("nav-menu-visible");
 });
@@ -41,13 +48,7 @@ document.addEventListener("click", e => {
     }
 });
 
-const btnSend = document.querySelector(".send-btn1"),
-    btnCancelSend = document.querySelector(".salir-btn"),
-    Conbtn = document.querySelector(".Con-sumit-btn"),
-    BtnUserIn = document.querySelector(".btn-user"),
-    userIn = document.querySelector(".user-quest"),
-    sendIn = document.querySelector(".send"),
-    btnSend1 = document.querySelector(".send-btn");
+
 
 
 //
@@ -68,6 +69,10 @@ document.addEventListener("click", e => {
                 inputToken.classList.toggle("active");
             }
         }
+    }
+    if (e.target === btnCancel) {
+        BtnUserIn.classList.toggle("active");
+        userIn.classList.toggle("active");
     }
 });
 
@@ -114,7 +119,7 @@ const renderLogin = () => {
             },
         })
         GlobalBand = 0
-        if (clave){
+        if (clave) {
             VarialClave = true;
             Sesion(clave)
         }
@@ -219,19 +224,21 @@ const renderAnswer = (valorid, url, nombre) => {
     const nameA = nombre
     const DatasQ = { 'nombre': nameA, 'responses': answer, 'encuestaid': id }
     document.addEventListener("click", e => {
-        if (e.target === btnSendAsnwer){
+        if (e.target === btnSendAsnwer) {
             fetch('https://36oqqx1tq4.execute-api.us-west-1.amazonaws.com/api/respuestas', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(DatasQ),
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(DatasQ),
 
-        }).then(res => res.json())
-            .then(data => console.log(data))
-        alert("Pregunta respondida satisfactoriamente")
-        sendIn.classList.toggle("active");
-        window.location.href = 'index.html';
+            }).then(res => res.json())
+                .then(data => console.log(data))
+            alert("Pregunta respondida satisfactoriamente")
+            sendIn.classList.toggle("active");
+            BtnUserIn.classList.toggle("active");
+            userIn.classList.toggle("active");
+            signIn.classList.toggle("active");
         }
     });
 }
@@ -239,10 +246,11 @@ const renderAnswer = (valorid, url, nombre) => {
 /*GRAFICAS*/
 const btnStat = document.querySelector(".btn-stats"),
     GraficasIn = document.querySelector(".graficas"),
-    btnRegresar = document.querySelector(".back-btn_graf");
+    btnRegresar = document.querySelector(".back-btn_graf"),
+    btnIcon = document.querySelector(".bx-bar-chart-alt-2");
 
 document.addEventListener("click", e => {
-    if (e.target === btnStat || e.target === btnRegresar) {
+    if (e.target === btnStat || e.target === btnIcon || e.target === btnRegresar) {
         GraficasIn.classList.toggle("active")
         sesionIn.classList.toggle("active");
         Pofavor()
